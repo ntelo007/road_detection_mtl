@@ -12,13 +12,11 @@ import os
 import argparse
 
 
-def create_mosaic(input_dir, output_dir, filename, secondary_dir=None):
+def create_mosaic(input_dir, secondary_dir=None):
     """
     :param input_dir: Full path of the input directory holding images to be merged
-    :param output_dir: Full path of the output directory, where the mosaic should be stored
-    :param filename: Name of the output file (e.g. mosaic). The ending .tif is automatically added
     :param secondary_dir: Full path of the secondary directory holding images to be merged
-    :return: None
+    :return: the mosaic file and its metadata
     """
     if not os.path.isdir(input_dir):
         print("You typed: {0}").format(input_dir)
@@ -66,10 +64,15 @@ def create_mosaic(input_dir, output_dir, filename, secondary_dir=None):
                          "nodata": 0
                          })
 
-        # Writes the mosaic raster to the output directory
-        mosaic_name = output_dir + "\\" + filename
-        with rasterio.open(mosaic_name, "w", **out_meta) as dest:
-            dest.write(mosaic)
+        return mosaic, out_meta
+
+
+def save_tif(image, meta, output_dir, filename):
+    # Writes the raster to the desired output + filename
+    image_name = output_dir + "\\" + filename + ".tif"
+    with rasterio.open(image_name, "w", **meta) as dest:
+        dest.write(image)
+
 
 def main():
     # Create a parser object and request info from the user. Store it in the variable args.
@@ -88,7 +91,7 @@ def main():
                         required=True)
     parser.add_argument('--filename',
                         '-f',
-                        help='Please provide the output filename. ',
+                        help='Please provide the output filename without the ending (e.g. without .tif. ',
                         type=str,
                         required=True
                         )
@@ -98,7 +101,8 @@ def main():
                         type=str,
                         required=False)
     args = parser.parse_args()
-    create_mosaic(args.input_dir, args.output_dir, args.filename, args.secondary_input_dir)
+    mosaic, meta = create_mosaic(args.input_dir,   args.secondary_input_dir)
+    save_tif(mosaic, meta, args.output_dir, args.filename)
     print("The creation of the mosaic is finished.")
 
 
