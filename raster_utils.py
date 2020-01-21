@@ -1,15 +1,58 @@
-"""
-This script creates a raster mosaic.
-The user provides the full path of a directory(ies) that contains the input images and
-the full path of the output directory where the mosaic will be stored.
-The user can change the metadata (no data value, transform, etc.) of the mosaic output.
-"""
-
 import rasterio
 from rasterio.merge import merge
 import glob
 import os
 import argparse
+import numpy as np
+
+
+def compute_hist_for_single_image(image, bins='auto', range=None):
+
+    if image is str:
+        # read image and save its bands to a list
+        with rasterio.open(image) as file:
+            image_bands = []
+            for band in file.indexes:
+                image_band = file.read(band)
+                image_bands.append(image_band)
+        # store the histogram and bin edges of each image band
+        histograms = []
+        for i in image_bands:
+            hist, bin_edges = np.histogram(i, bins=bins, range=range)
+            histograms.append([hist, bin_edges])
+    else:
+        histograms = []
+        for i in image:
+            hist, bin_edges = np.histogram(i, bins=bins, range=range)
+            histograms.append([hist, bin_edges])
+
+    return histograms
+
+
+def compute_hist_of_multiple_images(input_dir):
+    """
+    Creates a list of histograms for every band of every image withing a directory
+    :param input_dir: Full path directory that contains images
+    :return: list of histograms and bin edges of every image band of every image withing a directory
+    """
+
+    if not os.path.isdir(input_dir):
+        print("You typed: {0}").format(input_dir)
+        print("This directory does not exist. The computation of histograms is cancelled.")
+        return None
+
+    else:
+        # a search criterion, that every file should have the ending .tif
+        search_criterion = "*.tif"
+        q = os.path.join(input_dir, search_criterion)
+        # creates a list of all images within the input dir that have the ending .tif
+        src_images = glob.glob(q)
+        # creates a list to store every histogram from every image
+        list_of_histograms = []
+        for i in src_images:
+            h = compute_hist_for_single_image(i)
+            list_of_histograms.append(h)
+        return list_of_histograms
 
 
 def create_mosaic(input_dir, secondary_dir=None):
@@ -74,41 +117,14 @@ def save_tif(image, meta, output_dir, filename):
         dest.write(image)
 
 
-def main():
-    # Create a parser object and request info from the user. Store it in the variable args.
-    parser = argparse.ArgumentParser()
-    # ask from the user to provide the full path of the input directory of the 16 bit images
-    parser.add_argument('--input_dir',
-                        '-i',
-                        help='Please provide the input directory. ',
-                        type=str,
-                        required=True)
-    # ask from the user to provide the full path of the output directory where the 8 bit images will be stored
-    parser.add_argument('--output_dir',
-                        '-o',
-                        help='Please provide the output directory. ',
-                        type=str,
-                        required=True)
-    parser.add_argument('--filename',
-                        '-f',
-                        help='Please provide the output filename without the ending (e.g. without .tif. ',
-                        type=str,
-                        required=True
-                        )
-    parser.add_argument('--secondary_input_dir',
-                        '-s',
-                        help='If desired, provide the secondary input directory',
-                        type=str,
-                        required=False)
-    args = parser.parse_args()
-    mosaic, meta = create_mosaic(args.input_dir,   args.secondary_input_dir)
-    save_tif(mosaic, meta, args.output_dir, args.filename)
-    print("The creation of the mosaic is finished.")
+def equal_height_bins_hist(x, nbin):
+    npt = len(x)
+    return np.interp(np.linspace(0, npt, nbin + 1),
+                     np.arange(npt),
+                     np.sort(x))
 
 
-if __name__ == "__main__":
-# execute only if run as a script
-    main()
+
 
 
 
