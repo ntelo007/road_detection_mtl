@@ -1,60 +1,80 @@
 """
 The SpaceNet imagery is distributed as 16-bit imagery, 
-and the road network is distributed as a line-string vector GeoJSON format
-This script converts the images to 8-bit and creates the road masks
+and the road network is distributed as a line-string vector GeoJSON format.
+This script converts the SpaceNet imagery to 8-bit, creates the road masks and distributes all files to final folders.
 """
 
-import argparse
-import time
+import raster_utils
+import json
 import os
+import glob
+from matplotlib import pyplot
 import numpy as np
-import tifffile as tif
-
-
-def convert_to_8bit(input_dir, output_dir):
-    if not os.path.isdir(input_dir):
-        print("You typed: {0}").format(input_dir))
-        print("This directory does not exist. The script is terminating")
-
-    else:
-        # if the output dir doesn't exist, create it
-        if not os.path.exists(output_dir):
-            os.makedirs(output_dir)
-
-        for image_16_bits in os.listdir(input_dir):
-            if image_16_bits.endswith(".tif"):
-                image_name = image_16_bits.split('/')[-1].replace('.tif', '.png')
-
-                # read image and collect R,G,B bands
-                img = tif.imread(image_16_bits)
-                red_band = np.asarray(image_16_bits[:,:,0], dtype=np.float)
-                green_band = np.asarray(image_16_bits[:, :, 0], dtype=np.float)
-                blue_band = np.asarray(image_16_bits[:, :, 0], dtype=np.float)
-
-                
-
-
-
 
 def main():
-    # Create a parser object, request info from the user and store it in the variable args
-    parser = argparse.ArgumentParser()
-    # ask from the user to provide the full path of the input directory of the 16 bit images
-    parser.add_argument('--input_dir',
-                        '-i',
-                        help='Please provide the input directory (RGB-Pansharpened image folder).',
-                        type=str,
-                        required=True)
-    # ask from the user to provide the full path of the output directory where the 8 bit images will be stored
-    parser.add_argument('--output_dir',
-                        '-o',
-                        help='Please provide the output directory.',
-                        type=str,
-                        required=True)
-    args = parser.parse_args()
+    with open('config.json') as json_file:
 
-    start = time.clock()
-    convert_to_8bit(args.input_dir, args.output_dir)
-    end = time.clock()
+        # open the config.json file that contains all the necessary information
+        config = json.load(json_file)
 
-    print("The conversion of the input 16-bit images to 8-bit images is finished. The procedure lasted {1}s.".format(end - start))
+        # iterate through every region and convert images to 8-bit
+        for region, dirs in config['pre-processing']['SpaceNet']['regions'].items():
+            print('*********************************')
+            print('Preparing region ', region, '...')
+            keys = list(dirs)
+            # creates a mosaic to compute global histogram of bands
+            mosaic, _ = raster_utils.create_mosaic(dirs[keys[0]], dirs[keys[1]])
+            mask = np.where(mosaic == 0, mosaic, np.nan)
+            masked_mosaic = np.ma.masked_array(mosaic, mask)
+
+            mean = masked_mosaic.mean()
+            std = masked_mosaic.std()
+
+
+            #playground
+            red_mean = np.mean(mosaic[0])
+            red_std = np.std(mosaic[0])
+            '''
+            green_mean = np.mean(mosaic[1])
+            green_std = np.std(mosaic[1])
+
+            blue_mean = np.mean(mosaic[2])
+            blue_std = np.std(mosaic[2])
+
+
+
+           
+            hist = raster_utils.compute_hist_for_single_image(mosaic, bins='auto')
+            print(hist[0])
+            n, bins, patches = plt.hist(mosaic, raster_utils.equal_height_bins_hist(mosaic, 10))
+            print('n= ', n)
+            print('bins= ', bins)
+            print('patches= ', patches)
+            break
+
+
+            # Conversion of training and testing images
+            search_criterion = "*.tif"
+            q1 = os.path.join(dirs[keys[0]], search_criterion)
+            train_src_images = glob.glob(q1)
+            q2 = os.path.join(dirs[keys[1]], search_criterion)
+            test_src_images = glob.glob(q2)
+            train_src_images = []
+            testing_src_images = []
+
+            for train_image in train_src_images:
+                pass
+
+            for test_image in test_src_images:
+                pass
+
+
+            print('Finished with region ', region)
+            '''
+            break
+
+    print('SpaceNet dataset prep is done!')
+
+if __name__ == "__main__":
+# execute only if run as a script
+    main()

@@ -1,1 +1,8 @@
-1.
+Notes that might be useful for the final stage of the thesis
+
+1. SpaceNet images were converted to 8-bit using min, max values calculated by the mean-3*std values.
+What if I run the same algorithm for mean-2*std values?
+
+2. SpaceNet images were converted to have better contrast with CLAHE. What if I didn't use that ? Or what if
+I used Adaptive Histogram Equalization?
+
