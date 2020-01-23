@@ -4,19 +4,23 @@
       "regions" : {
         "AOI_2_Vegas" : {
           "train_dir" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\spacenet\\spacenet3\\AOI_2_Vegas_Roads_Train\\RGB-PanSharpen",
-          "test_dir" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\SpaceNet\\spacenet3_test\\AOI_2_Vegas_Roads_Test_Public\\RGB-PanSharpen"
+          "test_dir" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\SpaceNet\\spacenet3_test\\AOI_2_Vegas_Roads_Test_Public\\RGB-PanSharpen",
+          "roads_train_dir" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\SpaceNet\\spacenet3\\AOI_2_Vegas_Roads_Train\\geojson_roads"
         },
         "AOI_3_Paris" : {
           "train_dir" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\spacenet\\spacenet3\\AOI_3_Paris_Roads_Train\\RGB-PanSharpen",
-          "test_dir" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\SpaceNet\\spacenet3_test\\AOI_3_Paris_Roads_Test_Public\\RGB-PanSharpen"
+          "test_dir" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\SpaceNet\\spacenet3_test\\AOI_3_Paris_Roads_Test_Public\\RGB-PanSharpen",
+          "roads_train_dir" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\SpaceNet\\spacenet3\\AOI_3_Paris_Roads_Train\\geojson_roads"
         },
         "AOI_4_Shanghai" : {
           "train_dir" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\spacenet\\spacenet3\\AOI_4_Shanghai_Roads_Train\\RGB-PanSharpen",
-          "test_dir" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\SpaceNet\\spacenet3_test\\AOI_4_Shanghai_Roads_Test_Public\\RGB-PanSharpen"
+          "test_dir" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\SpaceNet\\spacenet3_test\\AOI_4_Shanghai_Roads_Test_Public\\RGB-PanSharpen",
+          "roads_dir" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\SpaceNet\\spacenet3\\AOI_4_Shanghai_Roads_Train\\geojson_roads"
         },
         "AOI_5_Khartoum" : {
           "train_dir" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\spacenet\\spacenet3\\AOI_5_Khartoum_Roads_Train\\RGB-PanSharpen",
-          "test_dir" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\SpaceNet\\spacenet3_test\\AOI_5_Khartoum_Roads_Test_Public\\RGB-PanSharpen"
+          "test_dir" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\SpaceNet\\spacenet3_test\\AOI_5_Khartoum_Roads_Test_Public\\RGB-PanSharpen",
+          "roads_dir" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\SpaceNet\\spacenet3\\AOI_5_Khartoum_Roads_Train\\geojson_roads"
         }
       }
     },
@@ -38,43 +42,46 @@
   "training_data" : {
     "SpaceNet" : {
       "train" : {
-        "image" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\SpaceNet\\train\\sat",
+        "percentage" : 80,
+        "images" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\SpaceNet\\train\\sat",
         "gt" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\SpaceNet\\train\\gt"
       },
       "validation" : {
-        "image" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\SpaceNet\\validation\\sat",
+        "percentage" : 10,
+        "images" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\SpaceNet\\validation\\sat",
         "gt" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\SpaceNet\\validation\\gt"
       },
       "test" : {
-        "image" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\SpaceNet\\test\\sat",
+        "percentage" : 10,
+        "images" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\SpaceNet\\test\\sat",
         "gt" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\SpaceNet\\test\\gt"
       }
     },
     "DeepGlobe" : {
       "train" : {
-        "image" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\DeepGlobe\\train\\images",
+        "images" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\DeepGlobe\\train\\images",
         "gt" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\DeepGlobe\\train\\gt"
       },
       "validation" : {
-        "image" : "",
+        "images" : "",
         "gt" : ""
       },
       "test" : {
-        "image" : "",
+        "images" : "",
         "gt" : ""
       }
     },
     "Mnih_Massachusetts" : {
       "train" : {
-        "image" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\Massachusetts\\train\\sat",
+        "images" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\Massachusetts\\train\\sat",
         "gt" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\Massachusetts\\train\\map"
       },
       "validation" : {
-        "image" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\Massachusetts\\valid\\sat",
+        "images" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\Massachusetts\\valid\\sat",
         "gt" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\Massachusetts\\valid\\map"
       },
       "test" : {
-        "image" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\Massachusetts\\test\\sat",
+        "images" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\Massachusetts\\test\\sat",
         "gt" : "C:\\Users\\kaniourasp\\Downloads\\Thesis\\Datasets\\Massachusetts\\test\\map"
       }
     }

@@ -8,72 +8,45 @@ import raster_utils
 import json
 import os
 import glob
-from matplotlib import pyplot
+import matplotlib.pyplot as plt
 import numpy as np
+from time import perf_counter
+
 
 def main():
+    # Start the stopwatch / counter
+    t1_start = perf_counter()
+
     with open('config.json') as json_file:
 
-        # open the config.json file that contains all the necessary information
+        # store config.json file as a dictionary
         config = json.load(json_file)
 
         # iterate through every region and convert images to 8-bit
         for region, dirs in config['pre-processing']['SpaceNet']['regions'].items():
-            print('*********************************')
+            print('-'*80)
             print('Preparing region ', region, '...')
             keys = list(dirs)
-            # creates a mosaic to compute global histogram of bands
-            mosaic, _ = raster_utils.create_mosaic(dirs[keys[0]], dirs[keys[1]])
-            mask = np.where(mosaic == 0, mosaic, np.nan)
-            masked_mosaic = np.ma.masked_array(mosaic, mask)
+            # creates a raster mosaic of all the satellite images withing the test and train directories
+            mosaic, _ = raster_utils.create_mosaic(dirs[keys[0]], dirs[keys[1]])    #the second dir might be useless -> no gt exists
+            # computes global histogram boundaries that contain 99% of the data
+            boundaries = raster_utils.compute_min_max_from_cdf(mosaic)
+            # convert images to 8 bit and save them all in the train folder of SpaceNet
+            raster_utils.convert_16_to_8_bits(dirs[keys[0]], boundaries, config)
+            # creation of road masks has to be added
 
-            mean = masked_mosaic.mean()
-            std = masked_mosaic.std()
-
-
-            #playground
-            red_mean = np.mean(mosaic[0])
-            red_std = np.std(mosaic[0])
-            '''
-            green_mean = np.mean(mosaic[1])
-            green_std = np.std(mosaic[1])
-
-            blue_mean = np.mean(mosaic[2])
-            blue_std = np.std(mosaic[2])
+            # cropping of both masks and images has to be added
 
 
-
-           
-            hist = raster_utils.compute_hist_for_single_image(mosaic, bins='auto')
-            print(hist[0])
-            n, bins, patches = plt.hist(mosaic, raster_utils.equal_height_bins_hist(mosaic, 10))
-            print('n= ', n)
-            print('bins= ', bins)
-            print('patches= ', patches)
-            break
-
-
-            # Conversion of training and testing images
-            search_criterion = "*.tif"
-            q1 = os.path.join(dirs[keys[0]], search_criterion)
-            train_src_images = glob.glob(q1)
-            q2 = os.path.join(dirs[keys[1]], search_criterion)
-            test_src_images = glob.glob(q2)
-            train_src_images = []
-            testing_src_images = []
-
-            for train_image in train_src_images:
-                pass
-
-            for test_image in test_src_images:
-                pass
-
-
+            # distribute images from the train folders to test and val randomly
+            raster_utils.distribute_images(config, 'images') # the second argument could be 'gt'
             print('Finished with region ', region)
-            '''
-            break
 
-    print('SpaceNet dataset prep is done!')
+    # Stop the stopwatch / counter
+    t1_stop = perf_counter()
+
+    print('SpaceNet dataset prep is done! Time elapsed: {0}s'.format(t1_stop-t1_start))
+
 
 if __name__ == "__main__":
 # execute only if run as a script
