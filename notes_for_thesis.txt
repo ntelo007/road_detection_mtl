@@ -7,3 +7,18 @@ proportionally?
 2. SpaceNet images were converted to have better contrast with CLAHE. What if I didn't use that ? Or what if
 I used Adaptive Histogram Equalization?
 
+3. Road detection from remote sensing imagery paper is very analytical. I can borrow exaplanations over theory for my thesis from there.
+
+4. JointNet paper has a nice related work section: MNih, Saito 2 papers, Zhang, + theory for thesis
+
+5. Consider using Group Normalization instead of Batch Normalization. Good explanation in the JointNet paper.
+
+6. Focal loss : https://arxiv.org/abs/1708.02002
+We discover that the extreme foreground-background class imbalance encountered during training of dense detectors
+is the central cause. We propose to address this class imbalance by reshaping the standard cross entropy loss such 
+that it down-weights the loss assigned to well-classified examples. Our novel Focal Loss focuses training on a sparse
+set of hard examples and prevents the vast number of easy negatives from overwhelming the detector during training.
+
+7. RCNN in the Recurrent Road detection and centerline extraction chinese paper. changed the cnn unit with a rcnn unit + applied multitask learning to improve results.
+
+
