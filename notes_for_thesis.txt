@@ -22,3 +22,5 @@ set of hard examples and prevents the vast number of easy negatives from overwhe
 7. RCNN in the Recurrent Road detection and centerline extraction chinese paper. changed the cnn unit with a rcnn unit + applied multitask learning to improve results.
 
 8. Don't forget to change co-reader and supervisors in thesis
+
+9.  Give credit to apls utils and road_connectivity for parts of their code. Also to the semseg pipeline. 
