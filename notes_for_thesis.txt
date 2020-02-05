@@ -24,3 +24,5 @@ set of hard examples and prevents the vast number of easy negatives from overwhe
 8. Don't forget to change co-reader and supervisors in thesis
 
 9.  Give credit to apls utils and road_connectivity for parts of their code. Also to the semseg pipeline. 
+
+10. ResNet + Unet theory + Transfer Learning https://towardsdatascience.com/u-nets-with-resnet-encoders-and-cross-connections-d8ba94125a2c
