@@ -46,6 +46,9 @@ python unet_mtl.py --task1 two --task2 intersection --task3 orientation --loss1 
 
 ![alt text](https://github.com/ntelo007/road_detection_mtl/tree/master/images/mtl_2_example.png)
 
+![ScreenShot](/images/mtl_2_example.png)
+
+
 
 ## Acknowledgments
 Parts of the code were heavily derived from https://github.com/qubvel/segmentation_models and https://github.com/anilbatra2185/road_connectivity.
