@@ -61,8 +61,8 @@ X  | X  | X  | X  | 0.673  | 0.716  | 0.621  |
 
 
 ## Prediction Results
-![ScreenShot](/Results/10710_image.PNG) | ![ScreenShot](/Results/10710_gt.PNG) | ![ScreenShot](/Results/10710_two.PNG) | ![ScreenShot](/Results/10710_mtl_result.PNG) | 
-Road Detection Task  | Road Intersection Task  | Road Orientation Task  | Road Gaussian Task  |
+![](/Results/10710_image.PNG) | ![](/Results/10710_gt.PNG) | ![](/Results/10710_two.PNG) | ![](/Results/10710_mtl_result.PNG) | 
+Satellite Image  | Ground Truth Mask  | Single-task prediction  | MTL prediction  |
 
 
 ## Acknowledgments
