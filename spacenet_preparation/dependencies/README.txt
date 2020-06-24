@@ -1,0 +1,1 @@
+sknw.py was retrieved from the road connectivity master. If it doesn't work, it should be downloaded from source again.

@@ -1,0 +1,83 @@
+{
+  "pre-processing": {
+    "SpaceNet": {
+      "crop_size" : 256,
+      "crop_overlap" : 128,
+      "image_suffix" : ".png",
+      "gt_suffix" : ".png",
+      "regions" : {
+        "AOI_2_Vegas" : {
+          "train_dir" : "C:\\...\\spacenet3\\AOI_2_Vegas_Roads_Train\\RGB-PanSharpen",
+          "test_dir" : "C:\\...\\spacenet3_test\\AOI_2_Vegas_Roads_Test_Public\\RGB-PanSharpen",
+          "roads_geojson" : "C:\\...\\spacenet3\\AOI_2_Vegas_Roads_Train\\geojson_roads",
+          "output_8bit" : "C:\\...\\spacenet3\\AOI_2_Vegas_Roads_Train\\RGB_8bit",
+          "output_road_masks" : "C:\\...\\spacenet3\\AOI_2_Vegas_Roads_Train\\road_masks",
+          "crops_output" : "C:\\...\\spacenet3\\AOI_2_Vegas_Roads_Train\\road_masks\\crops"
+        },
+        "AOI_3_Paris" : {
+          "train_dir" : "C:\\...\\spacenet3\\AOI_3_Paris_Roads_Train\\RGB-PanSharpen",
+          "test_dir" : "C:\\...\\spacenet3_test\\AOI_3_Paris_Roads_Test_Public\\RGB-PanSharpen",
+          "roads_geojson" : "C:\\...\\spacenet3\\AOI_3_Paris_Roads_Train\\geojson_roads",
+          "output_8bit" : "C:\\...\\spacenet3\\AOI_3_Paris_Roads_Train\\RGB_8bit",
+          "output_road_masks" : "C:\\...\\spacenet3\\AOI_3_Paris_Roads_Train\\road_masks",
+          "crops_output" : "C:\\...\\spacenet3\\AOI_3_Paris_Roads_Train\\road_masks\\crops"
+        },
+        "AOI_4_Shanghai" : {
+          "train_dir" : "C:\\...\\spacenet3\\AOI_4_Shanghai_Roads_Train\\RGB-PanSharpen",
+          "test_dir" : "C:\\...\\spacenet3_test\\AOI_4_Shanghai_Roads_Test_Public\\RGB-PanSharpen",
+          "roads_geojson" : "C:\\...\\spacenet3\\AOI_4_Shanghai_Roads_Train\\geojson_roads",
+          "output_8bit" : "C:\\...\\spacenet3\\AOI_4_Shanghai_Roads_Train\\RGB_8bit",
+          "output_road_masks" : "C:\\...\\spacenet3\\AOI_4_Shanghai_Roads_Train\\road_masks",
+          "crops_output" : "C:\\...\\spacenet3\\AOI_4_Shanghai_Roads_Train\\road_masks\\crops"
+        },
+        "AOI_5_Khartoum" : {
+          "train_dir" : "C:\\...\\spacenet3\\AOI_5_Khartoum_Roads_Train\\RGB-PanSharpen",
+          "test_dir" : "C:\\...\\spacenet3_test\\AOI_5_Khartoum_Roads_Test_Public\\RGB-PanSharpen",
+          "roads_geojson" : "C:\\...\\spacenet3\\AOI_5_Khartoum_Roads_Train\\geojson_roads",
+          "output_8bit" : "C:\\...\\spacenet3\\AOI_5_Khartoum_Roads_Train\\RGB_8bit",
+          "output_road_masks" : "C:\\...\\spacenet3\\AOI_5_Khartoum_Roads_Train\\road_masks",
+          "crops_output" : "C:\\...\\spacenet3\\AOI_5_Khartoum_Roads_Train\\road_masks\\crops"
+        }
+      }
+    }
+  },
+
+  "training_data" : {
+    "temp" : "C:\\...\\SpaceNet\\temp",
+    "SpaceNet" : {
+      "base_dir" : "C:\\...\\SpaceNet\\SpaceNet3-prepared",
+      "train": {
+        "b_dir" : "C:\\...\\SpaceNet\\SpaceNet3-prepared\\train",
+        "percentage": 80,
+        "images": "C:\\...\\SpaceNet\\SpaceNet3-prepared\\train\\images",
+        "centerline_gt": "C:\\...\\SpaceNet\\SpaceNet3-prepared\\train\\centerline_gt",
+        "2m_road_gt": "C:\\...\\SpaceNet\\SpaceNet3-prepared\\train\\2m_road_gt",
+        "intersection_gt": "C:\\...\\SpaceNet\\SpaceNet3-prepared\\train\\intersection_gt",
+        "orientation_gt": "C:\\...\\SpaceNet\\SpaceNet3-prepared\\train\\orientation_gt",
+        "gaussian_gt": "C:\\...\\SpaceNet\\SpaceNet3-prepared\\train\\gaussian_gt"
+      },
+      "validation": {
+        "b_dir" : "C:\\...\\SpaceNet\\SpaceNet3-prepared\\validation",
+        "percentage": 10,
+        "images": "C:\\...\\SpaceNet\\SpaceNet3-prepared\\validation\\images",
+        "centerline_gt": "C:\\...\\SpaceNet\\SpaceNet3-prepared\\validation\\centerline_gt",
+        "2m_road_gt": "C:\\...\\SpaceNet\\SpaceNet3-prepared\\validation\\2m_road_gt",
+        "intersection_gt": "C:\\...\\SpaceNet\\SpaceNet3-prepared\\validation\\intersection_gt",
+        "orientation_gt": "C:\\...\\SpaceNet\\SpaceNet3-prepared\\validation\\orientation_gt",
+        "gaussian_gt": "C:\\...\\SpaceNet\\SpaceNet3-prepared\\validation\\gaussian_gt"
+      },
+      "test": {
+        "b_dir" : "C:\\...\\SpaceNet\\SpaceNet3-prepared\\test",
+        "percentage": 10,
+        "images": "C:\\...\\SpaceNet\\SpaceNet3-prepared\\test\\images",
+        "centerline_gt": "C:\\...\\SpaceNet\\SpaceNet3-prepared\\test\\centerline_gt",
+        "2m_road_gt": "C:\\...\\SpaceNet\\SpaceNet3-prepared\\test\\2m_road_gt",
+        "intersection_gt": "C:\\...\\SpaceNet\\SpaceNet3-prepared\\test\\intersection_gt",
+        "orientation_gt": "C:\\...\\SpaceNet\\SpaceNet3-prepared\\test\\orientation_gt",
+        "gaussian_gt": "C:\\...\\SpaceNet\\SpaceNet3-prepared\\test\\gaussian_gt"
+      }
+    }
+  }
+}
+
+
