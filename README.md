@@ -41,6 +41,10 @@ or
 python unet_mtl.py --task1 two --task2 intersection --task3 orientation --loss1 cce_jaccard --loss2 cce_jaccard --loss3 cce_jaccard
 ```
 
+## Images
+![alt text](https://github.com/ntelo007/road_detection_mtl/tree/master/images/mtl_architecture.pdf)
+
+![alt text](https://github.com/ntelo007/road_detection_mtl/tree/master/images/mtl_2_example.png)
 
 
 ## Acknowledgments
