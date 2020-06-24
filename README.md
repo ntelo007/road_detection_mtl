@@ -42,7 +42,7 @@ python unet_mtl.py --task1 two --task2 intersection --task3 orientation --loss1 
 ```
 
 ## Image of the Proposed Model's architecture for the case of solving for 2 tasks
-![ScreenShot](/images/mtl_architecture.pdf)
+![ScreenShot](/images/architecture_mtl.png)
 
 ## Image of the Training Procedure of the Proposed Model for the case of solving for 2 tasks
 ![ScreenShot](/images/mtl_2_example.png)
