@@ -47,14 +47,22 @@ python unet_mtl.py --task1 two --task2 intersection --task3 orientation --loss1 
 ## Image of the Training Procedure of the Proposed Model for the case of solving for 2 tasks
 ![ScreenShot](/images/mtl_2_example.png)
 
-## Prediction Results
-![ScreenShot](/images/mtl_2_example.png)
-
 ## Accuracy assessment results
-First Header  | Second Header
-------------- | -------------
-Content Cell  | Content Cell
-Content Cell  | Content Cell
+Road Detection Task  | Road Intersection Task  | Road Orientation Task  | Road Gaussian Task  | Mean IoU  | Mean F1  | Mean clDice  | 
+------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | 
+X  | -  | -  | -  | 0.684  | 0.732  | 0.671  | 
+X  | X  | -  | -  | 0.677  | 0.725  | 0.661  | 
+X  | -  | -  | X  | 0.679  | 0.726  | 0.661  |
+X  | -  | X  | -  | 0.680  | 0.729  | 0.676  |
+X  | X  | X  | -  | **0.691**  | **0.740**  | **0.698**  |
+X  | X  | -  | X  | 0.681  | 0.727  | 0.657  |
+X  | -  | X  | X  | 0.668  | 0.712  | 0.621  |
+X  | X  | X  | X  | 0.673  | 0.716  | 0.621  |
+
+
+## Prediction Results
+![ScreenShot](/Results/10710_image.PNG) | ![ScreenShot](/Results/10710_gt.PNG) | ![ScreenShot](/Results/10710_two.PNG) | ![ScreenShot](/Results/10710_mtl_result.PNG) | 
+Road Detection Task  | Road Intersection Task  | Road Orientation Task  | Road Gaussian Task  |
 
 
 ## Acknowledgments
