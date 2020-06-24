@@ -61,7 +61,7 @@ X  | X  | X  | X  | 0.673  | 0.716  | 0.621  |
 
 
 ## Prediction Results
-| ![Screenshot](/Results/10710_image.PNG) | ![Screenshot](/Results/10710_gt.PNG | width=75) | ![Screenshot](/Results/10710_two.PNG | width=75) | ![Screenshot](/Results/10710_mtl_result.PNG | width=75) |
+| ![Screenshot](/Results/10710_image.PNG) | ![Screenshot](/Results/10710_gt.PNG) | ![Screenshot](/Results/10710_two.PNG) | ![Screenshot](/Results/10710_mtl_result.PNG) |
 |:---:|:---:|:---:|:---:|
 Satellite Image  | Ground Truth Mask  | Single-task prediction  | MTL prediction  |
 
