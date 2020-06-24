@@ -61,15 +61,15 @@ X  | X  | X  | X  | 0.673  | 0.716  | 0.621  |
 
 
 ## Prediction Results
-| ![Screenshot](/Results/10710_image.PNG) | ![Screenshot](/Results/10710_gt.PNG) | ![Screenshot](/Results/10710_two.PNG) | ![Screenshot](/Results/10710_mtl_result.PNG) |
-| ![Screenshot](/Results/1_image.PNG) | ![Screenshot](/Results/1_gt.PNG) | ![Screenshot](/Results/1_two.PNG) | ![Screenshot](/Results/1_mtl.PNG) |
-| ![Screenshot](/Results/3989_image.PNG) | ![Screenshot](/Results/3989_gt.PNG) | ![Screenshot](/Results/3989_two.PNG) | ![Screenshot](/Results/3989_result_mtl.PNG) |
-| ![Screenshot](/Results/3_image.PNG) | ![Screenshot](/Results/3_gt.PNG) | ![Screenshot](/Results/3_two.PNG) | ![Screenshot](/Results/3_mtl.PNG) |
-| ![Screenshot](/Results/4059_image.PNG) | ![Screenshot](/Results/4059_gt.PNG) | ![Screenshot](/Results/4059_two.PNG) | ![Screenshot](/Results/4059_mtl.PNG) |
-| ![Screenshot](/Results/6960_image.PNG) | ![Screenshot](/Results/6960_gt.PNG) | ![Screenshot](/Results/6960_two.PNG) | ![Screenshot](/Results/6960_mtl_result.PNG) |
-| ![Screenshot](/Results/7_image.PNG) | ![Screenshot](/Results/7_gt.PNG) | ![Screenshot](/Results/7_two.PNG) | ![Screenshot](/Results/7_mtl.PNG) |
+![Screenshot](/Results/10710_image.PNG) | ![Screenshot](/Results/10710_gt.PNG) | ![Screenshot](/Results/10710_two.PNG) | ![Screenshot](/Results/10710_mtl_result.PNG)
+![Screenshot](/Results/1_image.PNG) | ![Screenshot](/Results/1_gt.PNG) | ![Screenshot](/Results/1_two.PNG) | ![Screenshot](/Results/1_mtl.PNG)
+![Screenshot](/Results/3989_image.PNG) | ![Screenshot](/Results/3989_gt.PNG) | ![Screenshot](/Results/3989_two.PNG) | ![Screenshot](/Results/3989_result_mtl.PNG)
+![Screenshot](/Results/3_image.PNG) | ![Screenshot](/Results/3_gt.PNG) | ![Screenshot](/Results/3_two.PNG) | ![Screenshot](/Results/3_mtl.PNG)
+![Screenshot](/Results/4059_image.PNG) | ![Screenshot](/Results/4059_gt.PNG) | ![Screenshot](/Results/4059_two.PNG) | ![Screenshot](/Results/4059_mtl.PNG)
+![Screenshot](/Results/6960_image.PNG) | ![Screenshot](/Results/6960_gt.PNG) | ![Screenshot](/Results/6960_two.PNG) | ![Screenshot](/Results/6960_mtl_result.PNG)
+![Screenshot](/Results/7_image.PNG) | ![Screenshot](/Results/7_gt.PNG) | ![Screenshot](/Results/7_two.PNG) | ![Screenshot](/Results/7_mtl.PNG)
 |:---:|:---:|:---:|:---:|
-| Satellite Image  | Ground Truth Mask  | Single-task prediction  | MTL prediction  |
+Satellite Image  | Ground Truth Mask  | Single-task prediction  | MTL prediction 
 
 
 ## Acknowledgments
