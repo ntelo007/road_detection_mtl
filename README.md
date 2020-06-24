@@ -41,13 +41,20 @@ or
 python unet_mtl.py --task1 two --task2 intersection --task3 orientation --loss1 cce_jaccard --loss2 cce_jaccard --loss3 cce_jaccard
 ```
 
-## Images
-![alt text](https://github.com/ntelo007/road_detection_mtl/tree/master/images/mtl_architecture.pdf)
+## Image of the Proposed Model's architecture for the case of solving for 2 tasks
+![ScreenShot](/images/mtl_architecture.pdf)
 
-![alt text](https://github.com/ntelo007/road_detection_mtl/tree/master/images/mtl_2_example.png)
-
+## Image of the Training Procedure of the Proposed Model for the case of solving for 2 tasks
 ![ScreenShot](/images/mtl_2_example.png)
 
+## Prediction Results
+![ScreenShot](/images/mtl_2_example.png)
+
+## Accuracy assessment results
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
 
 
 ## Acknowledgments
