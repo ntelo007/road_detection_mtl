@@ -65,9 +65,9 @@ Satellite Image  | Ground Truth Mask  | Single-task prediction  | MTL prediction
 :---:|:---:|:---:|:---:
 ![Alt Text](/Results/10710_image.PNG) | ![Alt Text](/Results/10710_gt.PNG) | ![Alt Text](/Results/10710_two.PNG) | ![Alt Text](/Results/10710_mtl_result.PNG)
 ![Alt Text](/Results/1_image.PNG) | ![Alt Text](/Results/1_gt.PNG) | ![Alt Text](/Results/1_two.PNG) | ![Alt Text](/Results/1_mtl.PNG)
-![Alt Text](/Results/3989_image.PNG) | ![Alt Text](/Results/3989_gt.PNG) | ![Alt Text](/Results/3989_two.PNG) | ![Alt Text](/Results/3989_result_mtl.PNG)
+![Alt Text](/Results/3989_image.PNG) | ![Alt Text](/Results/3989_gt.PNG) | ![Alt Text](/Results/3989_two.PNG) | ![Alt Text](/Results/3989_mtl_result.PNG)
 ![Alt Text](/Results/3_image.PNG) | ![Alt Text](/Results/3_gt.PNG) | ![Alt Text](/Results/3_two.PNG) | ![Alt Text](/Results/3_mtl.PNG)
-![Alt Text](/Results/4059_image.PNG) | ![Alt Text](/Results/4059_gt.PNG) | ![Alt Text](/Results/4059_two.PNG) | ![Alt Text](/Results/4059_mtl.PNG)
+![Alt Text](/Results/4059_image.PNG) | ![Alt Text](/Results/4059_gt.PNG) | ![Alt Text](/Results/4059_two.PNG) | ![Alt Text](/Results/4059_mtl_result.PNG)
 ![Alt Text](/Results/6960_image.PNG) | ![Alt Text](/Results/6960_gt.PNG) | ![Alt Text](/Results/6960_two.PNG) | ![Alt Text](/Results/6960_mtl_result.PNG)
 ![Alt Text](/Results/7_image.PNG) | ![Alt Text](/Results/7_gt.PNG) | ![Alt Text](/Results/7_two.PNG) | ![Alt Text](/Results/7_mtl.PNG)
 
